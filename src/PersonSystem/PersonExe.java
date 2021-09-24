@@ -79,13 +79,14 @@ public class PersonExe {
 		Gender sex = ScanUtil.readGen("성별을 입력하세요.");
 		for (int i = 0; i < PersonAry.length; i++) {
 			if (PersonAry[i] != null)
-				if (!search.equals("")) {
-					if (PersonAry[i].getName().indexOf(search) != -1);
+				if (!search.equals("")&& sex !=null) {
+					if (PersonAry[i].getName().indexOf(search) != -1 && PersonAry[i].getGender().equals(sex));
 					System.out.println(PersonAry[i].toString());
 				} else if (!search.equals("")) {
-					if (PersonAry[i].getName().indexOf(search) != -1);
-						
-				} else if (!sex.equals("")) {
+					if (PersonAry[i].getName().indexOf(search) != -1) {
+						System.out.println(PersonAry[i].toString());
+					}
+				} else if (sex != null) {
 					if (PersonAry[i].getGender().equals(sex))
 						System.out.println(PersonAry[i].toString());
 				}
@@ -103,7 +104,7 @@ public class PersonExe {
 		if (!name.equals("")) {
 			PersonAry[num].setName(name);
 			Gender gender = ScanUtil.readGen("바꿀성별을 입력하세요.");
-			if (!gender.equals("")) {
+			if (gender != null) {
 				PersonAry[num].setGender(gender);
 			}
 			String phone = ScanUtil.readStr("바꿀 번호를 입력하세요.");

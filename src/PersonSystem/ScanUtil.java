@@ -28,8 +28,6 @@ public class ScanUtil {
 			gender = Gender.남자;
 		}else if(Str.equals("여자")) {
 			gender =Gender.여자;
-		}else {
-			System.out.println("입력이 잘못되었습니다.");
 		}
 		
 		// 열거형.valueof(문자열 A)
